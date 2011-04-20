@@ -2,7 +2,7 @@ from django.contrib import admin
 from djcode.blog.models import Category, Post, Tag
 
 class CategoryAdmin(admin.ModelAdmin):
-    slug = admin.SlugField(core=True, prepopulate_from=('name',))
+#    slug = admin.SlugField(core=True, prepopulate_from=('name',))
     
     fields = ('parent', 'name', 'description', 'category_order',)
     
