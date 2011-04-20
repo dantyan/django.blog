@@ -1,0 +1,12 @@
+{% extends 'template.djhtml' %}
+
+{% block content %}	
+	asdkjfhlakjsdhfl
+	{% for post in posts %}
+		<div>{{ post.name }}</div>
+	{% empty %}
+		<p> no posts</p>
+	{% endfor %}
+	asdkjfhlakjsdhfl		
+{% endblock %}
+
