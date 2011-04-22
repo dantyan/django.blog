@@ -12,7 +12,7 @@ class Category(models.Model):
 		return self.name
 
 	def get_absolute_url(self):
-		return '/blog/category-%i' % self.id
+		return '/blog/category-%i/' % self.id
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -24,6 +24,12 @@ class Post(models.Model):
 	date_add = models.DateTimeField(auto_now_add=True)
 	date_edit = models.DateTimeField(auto_now=True)
 	date_show = models.DateTimeField(blank=True)
+	
+	def __unicode__(self):
+		return self.name
+	
+	def get_absolute_url(self):
+		return '/blog/post-%i/' % self.id
 
 # ----------------------------------------------------------------------------------------------------------------------
 

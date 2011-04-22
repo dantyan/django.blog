@@ -19,6 +19,8 @@ def category(request, id):
     '''
         category page
     '''
+    import logging
+    
     data = {}
     data['category'] = Category.objects.get(id=id)
     data['posts'] = Post.objects.filter(category=id)

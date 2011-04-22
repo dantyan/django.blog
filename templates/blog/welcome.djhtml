@@ -3,13 +3,18 @@
 {% block content %}	
 	asdkjfhlakjsdhfl
 	{% for post in posts %}
-		<div>{{ post.name }}</div>
+		<div>
+			{{ post.name }} <br />
+			{{ post.get_absolute_url }} <br />
+		</div>
 	{% empty %}
 		<p> no posts</p>
 	{% endfor %}
 /////////////////////////////
 	{% for category in categories %}
-		<div>{{ category.name }}</div>
+		<div>
+			<a href="{{ category.get_absolute_url }}">{{ category.name }}</a> <br />
+		</div>
 	{% empty %}
 		<p> no posts</p>
 	{% endfor %}
