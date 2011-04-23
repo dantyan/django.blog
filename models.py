@@ -43,3 +43,6 @@ class PostMeta(models.Model):
 class Tag(models.Model):
 	tag = models.CharField(max_length=30)
 	post = models.ManyToManyField(Post)
+	
+	def get_absolute_url(self):
+		return '/blog/tags/%s' % self.tag
