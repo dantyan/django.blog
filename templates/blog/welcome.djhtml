@@ -1,4 +1,4 @@
-{% extends 'template.djhtml' %}
+{% extends 'blog/blog_layout.djhtml' %}
 
 {% block content %}	
 	asdkjfhlakjsdhfl

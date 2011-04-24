@@ -1,0 +1,4 @@
+{% extends 'template.djhtml' %}
+{% block styles %}
+	<link rel="stylesheet" type="text/css" media="all" href="/media/css/blog/styles.css" />
+{% endblock %}
