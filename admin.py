@@ -1,7 +1,8 @@
 from django.contrib import admin
+from mptt.admin import MPTTModelAdmin
 from djcode.blog.models import Category, Post, Tag
 
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(MPTTModelAdmin):
 	fields = ('parent', 'name', 'description', 'category_order',)
     
 

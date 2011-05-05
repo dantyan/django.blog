@@ -5,7 +5,8 @@ from djcode.blog.models import Post, Category
 
 def welcome(request):
     """ show blog index page """
-    import logging
+    
+    import logging   
 
     data = {}
     data['posts'] = Post.objects.all()
@@ -19,12 +20,12 @@ def category(request, id):
     '''
         category page
     '''
-    import logging
+#    import logging
     
     data = {}
     data['category'] = Category.objects.get(id=id)
     data['posts'] = Post.objects.filter(category=id)
     
-    logging.debug(data)
+#    logging.debug(data)
     
     return render_to_response('blog/category.djhtml', data)

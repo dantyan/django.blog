@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.db import models
+from mptt.models import MPTTModel
+#import mptt
 
 STATUS_CHOICES = (
     ('a', 'active'),
@@ -7,18 +9,26 @@ STATUS_CHOICES = (
 )
 
 # Create your models here.
-class Category(models.Model):
-	name = models.CharField(max_length=200)
-	parent = models.ForeignKey('self', blank=True, null=True, related_name='child')
-	description = models.TextField(blank=True,help_text="Optional")
-	category_order = models.PositiveSmallIntegerField(blank=True, help_text="Optional", default=0)
+class Category(MPTTModel):
+    name = models.CharField(max_length=200)
+    parent = models.ForeignKey('self', blank=True, null=True, related_name='child')
+    description = models.TextField(blank=True,help_text="Optional")
+    category_order = models.PositiveSmallIntegerField(blank=True, help_text="Optional", default=0)
+    
+#    class Meta:
+#        ordering = ['id',]
+    
+#    class MPTTMeta:
+#        level_attr = 'mptt_level'
+#        order_insertion_by=['name']
 
-	def __unicode__(self):
-		return self.name
+    def __unicode__(self):
+        return self.name
 
-	def get_absolute_url(self):
-		return '/blog/category-%i/' % self.id
+    def get_absolute_url(self):
+        return '/blog/category-%i/' % self.id
 
+#mptt.register(Category,)
 # ----------------------------------------------------------------------------------------------------------------------
 
 class Post(models.Model):
