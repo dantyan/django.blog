@@ -2,6 +2,7 @@
 
 {% block content %}
 	
-	{% include "blog/blocks/post_snippet.djhtml" with posts=posts %}
+	<h2>{{ post.title }}</h2>
+	{{ post.content }}
 		
 {% endblock %}

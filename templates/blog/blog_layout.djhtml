@@ -1,20 +1,28 @@
 {% extends 'template.djhtml' %}
+{% load mptt_tags %}
+
 {% block styles %}
 	<link rel="stylesheet" type="text/css" media="all" href="/media/css/blog/styles.css" />
 {% endblock %}
 
 
 {% block wrapper %}
-	<div id="header">
-		{% block header %}{% endblock %}
-	</div>
 	<div id="content-sidebar">
 		<div id="content">
 			{% block content %}content{% endblock %}
 		</div>
 		<div id="sidebar">
-			{% block sidebar %}sidebar{% endblock %}	
+			{% block sidebar %}
+				<div id="sidebar-categories" class="sidebar-widget">					
+					{% for category in categories %}
+						<div><a href="{{ category.get_absolute_url }}" style="padding-left:{{ category.level }}0px">{{ category.name }}</a></div>							
+					{% endfor %}
+				</div>
+			{% endblock %}	
 		</div>
+	</div>
+	<div id="header">
+		{% block header %}{% endblock %}
 	</div>
 	<div id="footer">
 		{% block footer %}{% endblock %}

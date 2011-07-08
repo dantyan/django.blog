@@ -1,23 +1,9 @@
 {% extends 'blog/blog_layout.djhtml' %}
 
+
 {% block content %}	
-	asdkjfhlakjsdhfl
-	{% for post in posts %}
-		<div>
-			{{ post.name }} <br />
-			{{ post.get_absolute_url }} <br />
-		</div>
-	{% empty %}
-		<p> no posts</p>
-	{% endfor %}
-/////////////////////////////
-	{% for category in categories %}
-		<div>
-			<a href="{{ category.get_absolute_url }}">{{ category.name }}</a> <br />
-		</div>
-	{% empty %}
-		<p> no posts</p>
-	{% endfor %}
-	asdkjfhlakjsdhfl		
+
+	{% include "blog/blocks/post_snippet.djhtml" with posts=posts %}	
+		
 {% endblock %}
 

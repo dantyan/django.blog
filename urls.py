@@ -5,4 +5,5 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('djcode.blog',
     (r'^$', 'views.welcome'),
     (r'^category-(?P<id>\d+)/$', 'views.category',),
+    (r'^post-(?P<id>\d+)/$', 'views.post',),
 )
