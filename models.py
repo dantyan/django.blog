@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.db import models
 from mptt.models import MPTTModel
+<<<<<<< HEAD
 #from local_models import RichTextFieldWithClass
+=======
+>>>>>>> b571d66f3b044fa4596c6ade03014495103eb554
 #import mptt
 
 STATUS_CHOICES = (
@@ -27,9 +30,18 @@ class Category(MPTTModel):
     description = models.TextField(blank=True,help_text="Optional")
     category_order = models.PositiveSmallIntegerField(blank=True, help_text="Optional", default=0)
     
+<<<<<<< HEAD
     class Meta:
         ordering = ['lft',]
         verbose_name_plural = 'Categories'
+=======
+#    class Meta:
+#        ordering = ['id',]
+    
+#    class MPTTMeta:
+#        level_attr = 'mptt_level'
+#        order_insertion_by=['name']
+>>>>>>> b571d66f3b044fa4596c6ade03014495103eb554
 
     def __unicode__(self):
         return self.name
