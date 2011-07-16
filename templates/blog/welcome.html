@@ -1,11 +1,11 @@
 {% extends 'blog/blog_layout.djhtml' %}
 
-{% block content %}	
-	asdkjfhlakjsdhfl
+{% block content %}
+	
 	{% for post in posts %}
 		<div>
-			{{ post.name }} <br />
-			{{ post.get_absolute_url }} <br />
+			<a href="{{ post.get_absolute_url }}">{{ post.name }}</a> <br />
+			 <br />
 		</div>
 	{% empty %}
 		<p> no posts</p>

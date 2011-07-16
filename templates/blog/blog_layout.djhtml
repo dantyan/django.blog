@@ -14,26 +14,10 @@
 		<div id="sidebar">
 			{% block sidebar %}
 				<div id="sidebar-categories" class="sidebar-widget">					
-<<<<<<< HEAD
 					{% for category in categories %}
 						<div><a href="{{ category.get_absolute_url }}" style="padding-left:{{ category.level }}0px">{{ category.name }}</a></div>							
 					{% endfor %}
 				</div>
-=======
-					<ul class="root"> 
-						{% recursetree categories %}
-							<li>
-					    		<a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
-						        {% if not node.is_leaf_node %}
-						        	<ul class="children">
-						            	{{ children }}
-						          	</ul>
-						      	{% endif %}
-						  	</li>
-						{% endrecursetree %}
-					</ul>						 
-				</div>				
->>>>>>> b571d66f3b044fa4596c6ade03014495103eb554
 			{% endblock %}	
 		</div>
 	</div>
